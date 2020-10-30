@@ -1,0 +1,7 @@
+티처블머신
+
+URL정리
+
+으쓱 - https://teachablemachine.withgoogle.com/models/G9FO6NyQD/
+
+손목들 - https://teachablemachine.withgoogle.com/models/rYgHYElG9/
