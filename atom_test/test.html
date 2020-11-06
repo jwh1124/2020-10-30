@@ -8,6 +8,8 @@
 </head>
 <body>
 <div>미친기계</div>
+
+<!--
 <button type="button" onclick="ignition1()">고개까딱</button>
 <button type="button" onclick="ignition2()">손목까딲</button>
 <form>
@@ -18,7 +20,7 @@
     <option value="0" selected="selected">쉬움</option>
     <option value="1">어려움</option>
 </select>
-  
+-->
 <div><canvas id="canvas"></canvas></div>
 <div id="label-container"></div>
 <div id="scorecount"></div>
@@ -30,26 +32,28 @@
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
     // the link to your model provided by Teachable Machine export panel
 
-var URL = "";
-window.Android.call_log('연동테스트');
-window.Android.howmany();
-  
-  
-window.onload = function(){
 
-  URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
-  init();
-};
-  
-  
+  window.onload = function(){
+
+    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
+    init();
+  };
+
+  window.Android.call_log('연동테스트');
+  window.Android.howmany();
+
+// var URL = "";
+//
 // function ignition1(){
-//    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
-//    init();
+//     URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
+//     init();
 // }
 // function ignition2(){
-//    URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
-//    init();
+//     URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+//     init();
 // }
+
+
 
     let model, webcam, ctx, labelContainer, maxPredictions;
     var maxset;
