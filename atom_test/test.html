@@ -164,8 +164,8 @@
         if (count == maxcount){
           set++;
           count = 0;
-          if(maxset != set){
-            window.Android.endset();
+          if(set<maxset){
+            window.Android.setFinish();
           }
 
         }
