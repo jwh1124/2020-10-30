@@ -94,11 +94,11 @@
         const flip = true; // whether to flip the webcam
         webcam = new tmPose.Webcam(size, size, flip); // width, height, flip
 
-        alert("here~");
+        console.log("here~");
         await webcam.setup(); // request access to the webcam
-        alert("here~1");
+        console.log("here~1");
         await webcam.play();
-        alert("here~2");
+        console.log("here~2");
         window.requestAnimationFrame(loop);
 
         // append/get elements to the DOM
