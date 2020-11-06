@@ -18,10 +18,10 @@
     <option value="1">어려움</option>
 </select>
 -->
-<form>
+<!-- <form>
   세트 수 :  <input id = 'inputset' type = 'number' value = '1'/><br>
   운동 갯수 :  <input id = 'inputcount' type = 'number' value = '1'/><br>
-</form>
+</form> -->
 <div><canvas id="canvas"></canvas></div>
 <div id="label-container"></div>
 <div id="scorecount"></div>
@@ -40,7 +40,6 @@
     var diff = 0.7;
 
   window.onload = function(){
-    window.Android.call_log('연동테스트');
     window.Android.howmany();
     URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
     init();
@@ -157,6 +156,7 @@
 
         if(set == maxset) {
           const end = '종료!';
+          window.Android.FinalSignal(1);
           dn.innerHTML = end;
           setTimeout(function(){
             set = 0;
