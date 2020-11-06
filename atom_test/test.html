@@ -27,22 +27,25 @@
 <div id="scorecount"></div>
 <div id="setcount"></div>
 <div id="done"></div>
+<div id="test"></div>
 </body>
 <script type="text/javascript">
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
     // the link to your model provided by Teachable Machine export panel
 
+    let model, webcam, ctx, labelContainer, maxPredictions;
+    var maxset;
+    var maxcount;
+    var diff = 0.7;
 
   window.onload = function(){
-
-    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
-    init();
     window.Android.call_log('연동테스트');
     window.Android.howmany();
+    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
+    init();
+
   };
-
-
 
 // var URL = "";
 //
@@ -57,10 +60,7 @@
 
 
 
-    let model, webcam, ctx, labelContainer, maxPredictions;
-    var maxset;
-    var maxcount;
-    var diff = 0.7;
+
 
 
 
@@ -79,8 +79,7 @@
     async function init() {
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
-        maxset = 0;
-        maxcount = 0;
+
         diff = 0.7;
 
 
@@ -110,6 +109,7 @@
         wc = document.getElementById("scorecount");
         sc = document.getElementById("setcount");
         dn = document.getElementById("done");
+        ts = document.getElementById("test");
         }
     }
 
@@ -131,7 +131,7 @@
 
     async function countable() { //운동 동작마다 필요한 class 수가 달라서 아마 카운트, 동작제어 등 다 따로 짜야될 듯..?
       predict();
-        if(action1 > 0.99){
+        if(action1 > 0.9){
           if(status == "squat"){
             count++;
             score = "excellent";
@@ -163,6 +163,9 @@
           dn.innerHTML = '';
         },3000);
         }
+
+
+        wc.innerHTML = maxset;
     }
 
 
