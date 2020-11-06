@@ -39,7 +39,7 @@
     var maxcount;
     var diff = 0.7;
 
-  window.onload = function(){
+    window.onload = function(){
     window.Android.howmany();
     URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
     init();
@@ -120,6 +120,15 @@
         window.requestAnimationFrame(loop);
     }
 
+    function fis(){
+      window.Android.FinalSignal(1);
+      window.Android.onFinish();
+    }
+
+
+
+
+
 
 //사용자 지정 불가능 변수
 
@@ -156,8 +165,7 @@
 
         if(set == maxset) {
           const end = '종료!';
-    //      window.Android.FinalSignal(1);
-          window.Android.onFinish();
+          fis();
           dn.innerHTML = end;
           setTimeout(function(){
             set = 0;
