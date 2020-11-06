@@ -59,23 +59,24 @@
     let model, webcam, ctx, labelContainer, maxPredictions;
     var maxset;
     var maxcount;
-    var diff;
+    var diff = 0.7;
 
     function setmax(){
-      maxset = document.getElementById("inputset").value;
-      maxcount = document.getElementById("inputcount").value;
+      maxset = 3;
+      maxcount = 3;
     }
 
-    function setdiff(){
-      if(0 == document.getElementById("hardness").value){
-        diff = 0.5;
-        //목소리 변화도 여기서 이루어질 예정
-      }
-      else if (1 == document.getElementById("hardness").value){
-        diff = 0.9;
-        //목소리 변화도 여기서 이루어질 예정
-      }
-    }
+
+    // function setdiff(){
+    //   if(0 == document.getElementById("hardness").value){
+    //     diff = 0.5;
+    //     //목소리 변화도 여기서 이루어질 예정
+    //   }
+    //   else if (1 == document.getElementById("hardness").value){
+    //     diff = 0.9;
+    //     //목소리 변화도 여기서 이루어질 예정
+    //   }
+    // }
 
     async function init() {
         const modelURL = URL + "model.json";
