@@ -128,6 +128,9 @@
       window.Android.FinalSignal(1);
     }
 
+    function setfis(){
+      window.Android.SetFinalSignal(1);
+    }
 
 
 
@@ -164,7 +167,7 @@
         if (count == maxcount){
           set++;
           count = 0;
-          //window.Android.endset();
+          setfis();
         }
 
         if(set == maxset) {
