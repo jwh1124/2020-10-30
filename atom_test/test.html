@@ -31,25 +31,7 @@
     //안드로이드로부터 얼마나 많은 세트, 운동횟수를 할 것 인지 받아옴
     window.Android.howmany();
     // window.Android.Model();
-    if(ModelFlag == 1 || ModelFlag == "1"){
-      URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
-      console.log("1");
-    }
-    else if (ModelFlag == 2 || ModelFlag == "2") {
-      URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
-      console.log("2");
-    }
-    else if (ModelFlag == 3 || ModelFlag == "3") {
-      URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
-      console.log("3");
-    }
-    else if (ModelFlag == 4 || ModelFlag == "4") {
-      URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
-      console.log("4");
-    }
-
-
-    // URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/"; //가변 URL
+      // URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/"; //가변 URL
     init(); //초기화
 
   };
@@ -66,12 +48,31 @@
 // }
 
     async function init() {
+
+      
+      if(ModelFlag == 1 || ModelFlag == "1"){
+        URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
+        console.log("1");
+      }
+      else if (ModelFlag == 2 || ModelFlag == "2") {
+        URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+        console.log("2");
+      }
+      else if (ModelFlag == 3 || ModelFlag == "3") {
+        URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+        console.log("3");
+      }
+      else if (ModelFlag == 4 || ModelFlag == "4") {
+        URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+        console.log("4");
+      }
+
+      
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
         window.Android.Diff();
-        console.log(URL);
-        console.log(maxset);
+
 
 
         // load the model and metadata
