@@ -130,10 +130,6 @@
       else window.Android.FinalSignal(0); //한세트 종료
     }
 
-    async function stopCam(){
-      await window.Android.endcam();
-    }
-
 
 
 
@@ -175,7 +171,7 @@
         if(set == maxset) {
           const end = '종료!';
           fin(1);
-          stopCam();
+          await window.Android.endcam();
           dn.innerHTML = end;
           setTimeout(function(){
             set = 0;
