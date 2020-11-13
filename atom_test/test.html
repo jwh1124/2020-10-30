@@ -12,7 +12,6 @@
 <!--
 <button type="button" onclick="ignition1()">고개까딱</button>
 <button type="button" onclick="ignition2()">손목까딲</button>
-
 <select name="난이도", id="hardness">
     <option value="0" selected="selected">쉬움</option>
     <option value="1">어려움</option>
@@ -124,12 +123,15 @@
         window.requestAnimationFrame(loop);
     }
 
-    function fis(){
-      window.Android.FinalSignal(1);
+    function fin(int n){
+      if (n = 1){
+      window.Android.FinalSignal(1); //전체set 종료
+    }
+      else window.Android.FinalSignal(0); //한세트 종료
     }
 
-    function setfis(){
-      window.Android.SetFinalSignal(1);
+    async function stopCam(){
+      await window.Android.endcam();
     }
 
 
@@ -167,14 +169,13 @@
         if (count == maxcount){
           set++;
           count = 0;
-          setfis();
+          fin(0);
         }
 
         if(set == maxset) {
           const end = '종료!';
-          fis();
-          webcam.stop();
-          track.stop();
+          fin(1);
+          stopCam();
           dn.innerHTML = end;
           setTimeout(function(){
             set = 0;
