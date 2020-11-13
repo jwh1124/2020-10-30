@@ -19,22 +19,32 @@
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/pose
     // the link to your model provided by Teachable Machine export panel
 
+
     let model, webcam, ctx, labelContainer, maxPredictions;
     var maxset;
     var maxcount;
     var diff = 0.7; //난이도 (변경 가능)
-    var URL = "2";
+    var URL = "";
 
     window.onload = function(){
     //안드로이드로부터 얼마나 많은 세트, 운동횟수를 할 것 인지 받아옴
-    console.log(URL);
-    console.log(maxset);
     window.Android.howmany();
     // window.Android.Model();
+    if(ModelFlag == 1){
+      URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
+    }
+    else if (ModelFlag == 2) {
+      URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+    }
+    else if (ModelFlag == 3) {
+      URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+    }
+    else if (ModelFlag == 4) {
+      URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
+    }
 
-    console.log(URL);
-    console.log(maxset);
-    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/"; //가변 URL
+
+    // URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/"; //가변 URL
     init(); //초기화
 
   };
