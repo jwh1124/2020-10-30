@@ -125,13 +125,12 @@
 
     function fin(n){
       if (n == 1){
-      window.Android.FinalSignal(1); //전체set 종료
+                  window.Android.FinalSignal(1); //전체set 종료
+                 }
+      else{
+          window.Android.FinalSignal(0); //한세트 종료
+          }
     }
-      else window.Android.FinalSignal(0); //한세트 종료
-    }
-
-
-
 
 
 //사용자 지정 불가능 변수
@@ -166,6 +165,7 @@
           set++;
           count = 0;
           fin(0);
+          window.Android.sendset(set);
         }
 
         if(set == maxset) {
