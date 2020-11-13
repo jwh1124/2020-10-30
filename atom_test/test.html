@@ -23,6 +23,7 @@
     let model, webcam, ctx, labelContainer, maxPredictions;
     var maxset;
     var maxcount;
+    var ModelFlag = 0;
     var diff = 0.7; //난이도 (변경 가능)
     var URL = "";
 
@@ -60,8 +61,6 @@
 //     init();
 // }
 
-console.log(URL);
-console.log(maxset);
 
     async function init() {
         const modelURL = URL + "model.json";
