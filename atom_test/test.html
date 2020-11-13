@@ -141,11 +141,7 @@
         else if(action3 > 0.3){
           if(status == "stand" || status == "squat"){
             score = "bad";
-            setTimeout(function(){
             window.Android.PlayAudio();  
-           
-        },5000);
-
           }
           status = "bent";
         }
