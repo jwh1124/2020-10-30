@@ -4,23 +4,9 @@
 <meta charset="UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
-<title>이 기계는 미쳤습니다</title>
+<title>AiHomeTraining</title>
 </head>
 <body>
-<div>미친기계</div>
-
-<!--
-<button type="button" onclick="ignition1()">고개까딱</button>
-<button type="button" onclick="ignition2()">손목까딲</button>
-<select name="난이도", id="hardness">
-    <option value="0" selected="selected">쉬움</option>
-    <option value="1">어려움</option>
-</select>
--->
-<!-- <form>
-  세트 수 :  <input id = 'inputset' type = 'number' value = '1'/><br>
-  운동 갯수 :  <input id = 'inputcount' type = 'number' value = '1'/><br>
-</form> -->
 <div><canvas id="canvas"></canvas></div>
 <div id="label-container"></div>
 <div id="scorecount"></div>
@@ -36,13 +22,14 @@
     let model, webcam, ctx, labelContainer, maxPredictions;
     var maxset;
     var maxcount;
-    var diff = 0.7;
+    var diff = 0.7; //난이도 (변경 가능)
 
     window.onload = function(){
     console.log("onlod");
+    //안드로이드로부터 얼마나 많은 세트, 운동횟수를 할 것 인지 받아옴
     window.Android.howmany();
-    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/";
-    init();
+    URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/"; //가변 URL
+    init(); //초기화
 
   };
 
@@ -115,14 +102,13 @@
         }
     }
 
-
-
     async function loop(timestamp) {
         webcam.update(); // update the webcam frame
         await countable();
         window.requestAnimationFrame(loop);
     }
 
+//종료시 통신함수
     function fin(n){
       if (n == 1){
                   window.Android.FinalSignal(1); //전체set 종료
@@ -161,7 +147,6 @@
         }
         const wcprint = '상태' + score + '갯수 :' + count +'세트 :'+ set;
         wc.innerHTML = wcprint;
-
 
         if(set == maxset) {
           const end = '종료!';
