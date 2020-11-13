@@ -155,21 +155,14 @@
         else if(action3 > 0.3){
           if(status == "stand" || status == "squat"){
             score = "bad";
-            window.Android.PlayAudio();
           }
           status = "bent";
         }
         const wcprint = '상태' + score + '갯수 :' + count +'세트 :'+ set;
         wc.innerHTML = wcprint;
 
-        if (count == maxcount){
-          set++;
-          count = 0;
-          fin(0);
-          window.Android.sendset(set);
-        }
 
-        if(set == maxset) {
+        if(count == maxcount && set == maxset) {
           const end = '종료!';
           fin(1);
           window.Android.endcam();
@@ -179,10 +172,14 @@
           dn.innerHTML = '';
         },3000);
         }
-
-
-        ts.innerHTML = maxset;
-    }
+        else if (count == maxcount ){
+          set++;
+          count = 0;
+          fin(0);
+          window.Android.sendset(set);
+        }
+    ts.innerHTML = maxset;
+  }
 
 
 
