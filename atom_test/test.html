@@ -30,6 +30,7 @@
     //안드로이드로부터 얼마나 많은 세트, 운동횟수를 할 것 인지 받아옴
     window.Android.howmany();
     window.Android.Model();
+    alert(URL);
     // URL = "https://teachablemachine.withgoogle.com/models/G9FO6NyQD/"; //가변 URL
     init(); //초기화
 
@@ -45,24 +46,6 @@
 //     URL = "https://teachablemachine.withgoogle.com/models/rYgHYElG9/";
 //     init();
 // }
-
-
-
-
-
-
-
-
-    // function setdiff(){
-    //   if(0 == document.getElementById("hardness").value){
-    //     diff = 0.5;
-    //     //목소리 변화도 여기서 이루어질 예정
-    //   }
-    //   else if (1 == document.getElementById("hardness").value){
-    //     diff = 0.9;
-    //     //목소리 변화도 여기서 이루어질 예정
-    //   }
-    // }
 
     async function init() {
         const modelURL = URL + "model.json";
